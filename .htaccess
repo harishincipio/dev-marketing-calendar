@@ -1,0 +1,13 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+#ignore rewrite rule for file and directory
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^manufacturer/(.*)$ manufacturer.php?name=$1 [QSA,L]
+RewriteRule ^product/(.*)$ product.php?id=$1 [QSA,L,CO=original-referer:%{ENV:myref}:.%{HTTP_HOST}:1440:/]
+RewriteRule ^select select.php [QSA,L]
+RewriteRule ^calendar calendar.php [QSA,L]
+RewriteRule ^form form.php [QSA,L]
+RewriteRule ^auth auth.php [QSA,L]

@@ -1,1 +1,2 @@
-# dev-marketing-calendar
+# marketing-calendar
+Incipio Product Marketing Calendar
